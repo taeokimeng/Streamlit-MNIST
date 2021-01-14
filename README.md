@@ -6,7 +6,7 @@ This project demonstrates the [Fashion MNIST dataset](https://github.com/tensorf
 
 The complete demo is [MNIST with Streamlit](https://github.com/taeokimeng/Streamlit-MNIST) and illustrates all the major building blocks of Streamlit.
 
-![Making-of Animation](https://raw.githubusercontent.com/taeokimeng/Streamlit-MNIST/master/README.md "Making-of Animation")
+![Making-of Animation](https://raw.githubusercontent.com/taeokimeng/Streamlit-MNIST/master/streamlit-mnist.gif "Making-of Animation")
 
 ## How to run this demo
 ```
