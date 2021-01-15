@@ -1,30 +1,35 @@
 import streamlit as st
 import urllib
 import src.mnist_run as mnist_run
-from src.resource import OPTIMIZERS, METRICS, SELECTED_OPTIMIZER, SELECTED_METRIC, SELECTED_EPOCH, EPOCH_MIN, EPOCH_MAX
+from src.resource import * # OPTIMIZERS, METRICS, SELECTED_OPTIMIZER, SELECTED_METRIC, SELECTED_EPOCH, EPOCH_MIN, EPOCH_MAX
 
 # Streamlit encourages well-structured code, like starting execution in a main() function.
 def main():
     st.set_page_config(page_title="Fashion MNIST with Streamlit", layout="wide")
 
     # Render the readme as markdown using st.markdown.
-    readme_text = st.markdown(get_file_content_as_string("instructions.md"))
+    readme_text = st.markdown(get_file_content_as_string(INTRO_MD))
 
     # Once we have the dependencies, add a selector for the app mode on the sidebar.
-    st.sidebar.title("What to do")
+    st.sidebar.title(SIDEBAR_TITLE)
     app_mode = st.sidebar.selectbox("Please choose the app mode",
-        ["Show instructions", "Run the app", "Show the source code"])
-    if app_mode == "Show instructions":
-        st.sidebar.success('To continue select "Run the app".')
-    elif app_mode == "Show the source code":
+        [SIDEBAR_OPTION_1, SIDEBAR_OPTION_2, SIDEBAR_OPTION_3])
+    if app_mode == SIDEBAR_OPTION_1:
+        st.sidebar.success('To continue, select "Run the app"')
+    elif app_mode == SIDEBAR_OPTION_2:
         readme_text.empty()
-        st.code(get_file_content_as_string("streamlit_app.py"))
-    elif app_mode == "Run the app":
+        run_app()
+        st.sidebar.button("Run")
+    elif app_mode == SIDEBAR_OPTION_3:
         readme_text.empty()
-        SELECTED_OPTIMIZER = optimizer_selector_ui()
-        SELECTED_METRIC = metric_selector_ui()
-        SELECTED_EPOCH = epoch_selector_ui()
-        mnist_run.run_mnist(selected_optimizer=SELECTED_OPTIMIZER, selected_metric=SELECTED_METRIC, selected_epochs=SELECTED_EPOCH)
+        st.code(get_file_content_as_string(APP_FILE_NAME))
+
+def run_app():
+    SELECTED_OPTIMIZER = optimizer_selector_ui()
+    SELECTED_METRIC = metric_selector_ui()
+    SELECTED_EPOCH = epoch_selector_ui()
+    mnist_run.run_mnist(selected_optimizer=SELECTED_OPTIMIZER, selected_metric=SELECTED_METRIC,
+                        selected_epochs=SELECTED_EPOCH)
 
 # Download a single file and make its content available as a string.
 @st.cache(show_spinner=False) # Default is True to show a spinner when there is a cache miss.

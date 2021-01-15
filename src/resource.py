@@ -1,3 +1,11 @@
+INTRO_MD = "introduction.md"
+SIDEBAR_TITLE = "What to do"
+SIDEBAR_OPTION_1 = "Show introduction"
+SIDEBAR_OPTION_2 = "Run the app"
+SIDEBAR_OPTION_3 = "Show the source code"
+
+APP_FILE_NAME = "streamlit_app.py"
+
 SELECTED_OPTIMIZER = 'adam'
 SELECTED_METRIC = 'accuracy'
 SELECTED_EPOCH = 5
