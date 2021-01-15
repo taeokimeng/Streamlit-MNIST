@@ -19,12 +19,12 @@ def main():
     elif app_mode == SIDEBAR_OPTION_2:
         readme_text.empty()
         run_app()
-        st.sidebar.button("Run")
     elif app_mode == SIDEBAR_OPTION_3:
         readme_text.empty()
         st.code(get_file_content_as_string(APP_FILE_NAME))
 
 def run_app():
+    st.title("Fashion MNIST data classification")
     SELECTED_OPTIMIZER = optimizer_selector_ui()
     SELECTED_METRIC = metric_selector_ui()
     SELECTED_EPOCH = epoch_selector_ui()
