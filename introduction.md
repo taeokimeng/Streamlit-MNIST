@@ -8,5 +8,6 @@ You can fine the source code on [MNIST with Streamlit](https://github.com/taeoki
 
 ### Questions? Comments?
 
-Pleas contact with me [Email](tokim@n2m.co.kr)
-You can find ask about Streamlit here [Streamlit community](https://discuss.streamlit.io).
+Please contact to [Taeo Kim](tokim@n2m.co.kr).
+
+In addition, You can get information on [Streamlit community](https://discuss.streamlit.io).
