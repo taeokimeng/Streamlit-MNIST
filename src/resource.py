@@ -1,5 +1,9 @@
+HYPER_PARAMS = []
+SAVE_IMAGES = {}
+
 INTRO_MD = "introduction.md"
-SIDEBAR_TITLE = "What to do"
+MAIN_TITLE = "Classification: The Fashion MNIST from TensorFlow"
+SIDEBAR_TITLE = "Menu"
 SIDEBAR_OPTION_1 = "Show introduction"
 SIDEBAR_OPTION_2 = "Run the app"
 SIDEBAR_OPTION_3 = "Show the source code"
